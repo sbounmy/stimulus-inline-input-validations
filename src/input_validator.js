@@ -175,8 +175,25 @@ export default class extends Controller {
         errorsContainer.innerHTML += this.errorElement(errorsContainer, error)
         errorsContainer.style.visibility = 'visible'
       })
+
+      this.dispatch('error', {
+        detail: {
+          field: field,
+          value: value,
+          target: target,
+          errors: errors
+        }
+      })
     } else {
       errorsContainer.style.visibility = 'invisible'
+
+      this.dispatch('success', {
+        detail: {
+          field: field,
+          value: value,
+          target: target
+        }
+      })
     }
   }
 }

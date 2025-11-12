@@ -196,3 +196,75 @@ Supported languages values:
 | `pt-BR` | Portugese (Brazil) |
 | `zh-CN` | Chinese (Simplified) |
 | `zh-TW` | Chinese (Traditional) |
+
+## Custom Events
+
+The validation controller dispatches custom events that you can listen to from other Stimulus controllers. These events allow you to react to validation state changes without checking the DOM.
+
+### Available Events
+
+| Event Name | When Dispatched | Event Detail |
+| ---------- | --------------- | ------------ |
+| `input-validator:success` | When validation passes (no errors) | `{ field, value, target }` |
+| `input-validator:error` | When validation fails (has errors) | `{ field, value, target, errors }` |
+
+### Event Detail Properties
+
+- `field` (string) - The value of the `data-field` attribute
+- `value` (string) - The current input value
+- `input` (HTMLElement) - The input element that was validated
+- `errors` (array) - Array of error objects (empty for success event)
+
+Each error object contains:
+```javascript
+{
+  type: string,    // e.g., "presence", "email", "length-min"
+  message: string  // The localized error message
+}
+```
+
+### Listening to Events with Stimulus Actions
+
+You can use Stimulus actions to listen to these events from another controller:
+
+```html
+<div data-controller="input-validator form-status"
+     data-action="input-validator:success->form-status#handleValid
+                  input-validator:error->form-status#handleInvalid">
+
+  <input type="email"
+         data-input-validator-target="field"
+         data-field="email"
+         data-validates-email>
+
+  <div data-input-validator-target="errors" data-field="email"></div>
+</div>
+```
+
+```javascript
+// form-status_controller.js
+import { Controller } from "@hotwired/stimulus"
+
+export default class extends Controller {
+  handleValid(event) {
+    const { field, value, errors } = event.detail
+    console.log(`${field} is valid:`, value)
+    // Enable submit button, show success indicator, etc.
+  }
+
+  handleInvalid(event) {
+    const { field, value, errors } = event.detail
+    console.log(`${field} has errors:`, errors)
+    // Disable submit button, show global error message, etc.
+  }
+}
+```
+
+Sometime you need to catch validation events globally (across the entire page), you can use the `@window` modifier:
+
+```html
+<div data-controller="global-validator-tracker"
+     data-action="input-validator:success@window->global-validator-tracker#trackSuccess
+                  input-validator:error@window->global-validator-tracker#trackError">
+</div>
+```
