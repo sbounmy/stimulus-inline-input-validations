@@ -92,7 +92,7 @@ describe("i18n/locales/en", () => {
         .should("exist")
         .should(
           "contain",
-          "Must contain at least one special character (!@#$%^&*)"
+          "Must contain at least one special character (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)"
         );
     });
   });

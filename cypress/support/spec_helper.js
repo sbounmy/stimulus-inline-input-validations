@@ -7,7 +7,7 @@ export function getRandomStrongPassword(length) {
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numericChars = "0123456789";
-  const specialChars = "!@#$%^&*";
+  const specialChars = "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
   const allChars =
     lowercaseChars + uppercaseChars + numericChars + specialChars;

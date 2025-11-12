@@ -89,7 +89,7 @@ describe("i18n/locales/fr", () => {
         .should("exist")
         .should(
           "contain",
-          "Doit contenir au moins un caractère spécial (!@#$%^&*)"
+          "Doit contenir au moins un caractère spécial (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)"
         );
       cy.get(`div[error="strong-password-length"]`)
         .should("exist")

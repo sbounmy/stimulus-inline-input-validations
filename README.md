@@ -10,7 +10,7 @@ performed on input and blur events.
 
 Looking for another awesome validations library to try? Check out [Formulus](https://github.com/marcoroth/formulus)
 
-## Installation 
+## Installation
 
 [StimulusJS](https://stimulusjs.org) installation is required.
 
@@ -40,9 +40,9 @@ application.register("input-validator", InputValidator)
 
 ```html
 <div data-controller="input-validator">
-    <input 
-      type="text" 
-      data-input-validator-target="field" 
+    <input
+      type="text"
+      data-input-validator-target="field"
       data-field='fullName'
     >
     ...
@@ -55,9 +55,9 @@ application.register("input-validator", InputValidator)
 
 ```html
 <div data-controller="input-validator">
-    <input 
-      type="text" 
-      data-input-validator-target="field" 
+    <input
+      type="text"
+      data-input-validator-target="field"
       data-field='fullName'>
 
     <div
@@ -67,13 +67,13 @@ application.register("input-validator", InputValidator)
 </div>
 ```
 
-4. Add, mix, and match validations attributes to the input field 
+4. Add, mix, and match validations attributes to the input field
 
 ```html
 <div data-controller="input-validator">
-    <input 
-      type="text" 
-      data-input-validator-target="field" 
+    <input
+      type="text"
+      data-input-validator-target="field"
       data-field='fullName'
       data-validates-presence
       data-validates-length="5,10"
@@ -96,10 +96,10 @@ application.register("input-validator", InputValidator)
 | `data-validates-length="5,10"` | Validates length in format `"min,max"` | `<div error="length-min">Too short. Must be 5 characters long</div>`|
 | `data-validates-numericality` | Ensures value is a Number | `<div error="numericality">Must be a number</div>`|
 | `data-validates-email` | Ensures value is in Email format | `<div error="email">Invalid email format</div>`|
-| `data-validates-strong-password` | Ensures value is strong password | `<div error="strong-password-length">Must be at least 10 characters long</div>, <div error="strong-password-special-character">Must contain at least one special character (!@#$%^&*) </div>, <div error="strong-password-capital-letter">Must contain at least one capital letter (A-Z)</div>`|
+| `data-validates-strong-password` | Ensures value is strong password | `<div error="strong-password-length">Must be at least 10 characters long</div>, <div error="strong-password-special-character">Must contain at least one special character (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~) </div>, <div error="strong-password-capital-letter">Must contain at least one capital letter (A-Z)</div>`|
 | `data-validations="[{"presence": true}, {"email": true}, {"numericality": true}, {"length": {"min": 5, "max": 10}}]"` | Handles multiple validations from a json-friendly-string| `<div error="presence">...</div> <div error="length-min">...</div> <div error="numericality">...</div> <div error="email">...</div>`|
 
-    
+
 ## Multiple validations passed as a json-friendly string
 
 You can also pass multiple validations as a json-friendly string with the `data-validations` attribute.
@@ -107,9 +107,9 @@ You can also pass multiple validations as a json-friendly string with the `data-
 Example:
 
 ```html
-<input 
-  type="text" 
-  data-input-validator-target="field" 
+<input
+  type="text"
+  data-input-validator-target="field"
   data-field='jsonBulkValidations'
   data-validations='[{"presence": true}, {"email": true}, {"numericality": true}, {"length": {"min": 5, "max": 10}}]'
 >

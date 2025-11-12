@@ -12,7 +12,7 @@ const ErrorMessages = {
         capitalLetter: 'Must contain at least one capital letter (A-Z)',
         number: 'Must contain at least one number',
         specialCharacter:
-          'Must contain at least one special character (!@#$%^&*)',
+          'Must contain at least one special character (!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~)',
         length: 'Must be at least 10 characters long'
       }
     },
@@ -28,7 +28,7 @@ const ErrorMessages = {
         capitalLetter: 'Debe contener al menos una letra mayúscula (A-Z)',
         number: 'Debe contener al menos un número',
         specialCharacter:
-          'Debe contener al menos un carácter especial (!@#$%^&*)',
+          'Debe contener al menos un carácter especial (!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~)',
         length: 'Debe tener al menos 10 caracteres'
       }
     },
@@ -44,7 +44,7 @@ const ErrorMessages = {
         capitalLetter: 'Doit contenir au moins une lettre majuscule (A-Z)',
         number: 'Doit contenir au moins un chiffre',
         specialCharacter:
-          'Doit contenir au moins un caractère spécial (!@#$%^&*)',
+          'Doit contenir au moins un caractère spécial (!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~)',
         length: 'Doit contenir au moins 10 caractères'
       }
     },
@@ -60,7 +60,7 @@ const ErrorMessages = {
         capitalLetter: 'Deve conter pelo menos uma letra maiúscula (A-Z)',
         number: 'Deve conter pelo menos um número',
         specialCharacter:
-          'Deve conter pelo menos um caractere especial (!@#$%^&*)',
+          'Deve conter pelo menos um caractere especial (!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~)',
         length: 'Deve ter pelo menos 10 caracteres'
       }
     },
@@ -75,7 +75,7 @@ const ErrorMessages = {
       strongPassword: {
         capitalLetter: '必须包含至少一个大写字母 (A-Z)',
         number: '必须至少包含一个数字',
-        specialCharacter: '必须至少包含一个特殊字符 (!@#$%^&*)',
+        specialCharacter: '必须至少包含一个特殊字符 (!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~)',
         length: '长度必须至少 10 个字符'
       }
     },
@@ -90,7 +90,7 @@ const ErrorMessages = {
       strongPassword: {
         capitalLetter: '必須包含至少一個大寫字母 (A-Z)',
         number: '必須至少包含一個數字',
-        specialCharacter: '必須至少包含一個特殊字元 (!@#$%^&*)',
+        specialCharacter: '必須至少包含一個特殊字元 (!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~)',
         length: '長度必須至少 10 個字符'
       }
     }

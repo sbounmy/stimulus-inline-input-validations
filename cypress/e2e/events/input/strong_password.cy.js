@@ -55,7 +55,7 @@ describe("input/strong_password", () => {
         .should("exist")
         .should(
           "contain",
-          "Must contain at least one special character (!@#$%^&*)"
+          "Must contain at least one special character (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)"
         );
     });
   });
@@ -81,7 +81,7 @@ describe("input/strong_password", () => {
         .should("exist")
         .should(
           "contain",
-          "Must contain at least one special character (!@#$%^&*)"
+          "Must contain at least one special character (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)"
         );
     });
   });
